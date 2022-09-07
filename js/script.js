@@ -7,8 +7,13 @@ const getElement = (id) => {
 function addBtn() {
     const inputTilte = getElement('todo-tilte')
     const inputText = getElement('todo-text')
-    getFromLocalStorage(inputTilte, inputText)
-    displayItem(inputTilte, inputText)
+    if (inputTilte !== '' && inputTilte.lenght === 0 && inputText !== '' && inputText.lenght === 0) {
+        getFromLocalStorage(inputTilte, inputText)
+        displayItem(inputTilte, inputText)
+    }
+    alert('please input value')
+    return
+
 }
 
 const setLocalStoreage = () => {
